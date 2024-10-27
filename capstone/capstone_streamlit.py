@@ -332,7 +332,7 @@ daily_aggregated_max.head()
 
 # Load the data
 
-df = pd.read_csv('/Users/evankerivan/Desktop/IOD/capstone/traffic_victoria_road.csv')
+df = pd.read_csv('capstone/traffic_victoria_road.csv')
 
 # Melt the DataFrame to convert the hour columns into rows
 df_melted = pd.melt(df, 
@@ -1219,79 +1219,4 @@ week_data = combined_data.loc[(combined_data.index >= today) & (combined_data.in
 
 week_data.head(10)
 
-
-# Streamlit app: Sydney Air Quality Forecast
-st.title("Sydney Air Quality Forecast")
-st.subheader("Weather")
-
-weather_columns = week_data[['TEMP_min', 'TEMP_max', 'RAIN_sum', 'forecast']].copy()
-
-# Rename the columns in weather_columns as needed
-weather_columns.rename(columns={
-    'TEMP_min': 'Temp Min (C)',
-    'TEMP_max': 'Temp Max (C)',
-    'RAIN_sum': 'Rain (mm)',
-    'forecast': 'Forecast'
-}, inplace=True)
-
-st.write(weather_columns)
-
-# Air Quality Subtitle
-st.subheader("Air Quality")
-
-# Function for color coding air quality
-def color_air_quality(val):
-    color = ''
-    if val == 'Good':
-        color = 'background-color: green'
-    elif val == 'Fair':
-        color = 'background-color: yellow'
-    elif val == 'Poor':
-        color = 'background-color: orange'
-    elif val == 'Very Poor':
-        color = 'background-color: red'
-    return color
-
-# Select the air quality columns to display
-air_quality_columns = ['CO', 'OZONE', 'PM10', 'PM2.5', 'SO2', 'overall']
-
-# Apply the color formatting
-styled_df = week_data[air_quality_columns].style.applymap(color_air_quality)
-
-# Display the styled DataFrame in Streamlit
-st.write(styled_df)
-
-graph_week = week_data[['CO_mean','SO2_mean','OZONE_mean','PM10_mean','PM2.5_mean']]
-
-# Rename the columns as per your requirements
-graph_week.rename(columns={
-    'CO_mean': 'CO',
-    'SO2_mean': 'SO2',
-    'OZONE_mean': 'OZONE',
-    'PM10_mean': 'PM10',
-    'PM2.5_mean': 'PM2.5'
-}, inplace=True)
-
-pollutants = ['CO', 'SO2', 'OZONE', 'PM10', 'PM2.5']
-
-# Display the head of the new DataFrame to ensure it's working
-graph_week.head()
-import matplotlib.pyplot as plt
-
-# Create a new figure and axis for the plot
-for column in graph_week.columns:
-    # Create a new figure and axis for each pollutant
-    fig, ax = plt.subplots(figsize=(10, 6))
-
-    # Plot the specific column (pollutant)
-    ax.plot(graph_week.index, graph_week[column], label=column, color='b')
-
-    # Add labels, title, and legend to the plot
-    ax.set_xlabel('Date')
-    ax.set_ylabel('Concentration')
-    ax.set_title(f'Daily {column} Concentration')
-    ax.legend()
-
-    # Render the plot using Streamlit (or display it directly in Jupyter)
-    st.pyplot(fig)  # For Streamlit
-# %%
+week_data.to_csv('week_data.csv', index=True)  # Saves with date as the index

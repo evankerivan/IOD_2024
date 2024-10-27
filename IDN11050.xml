@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="1.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.bom.gov.au/schema/v1.7/product.xsd">
+    <amoc>
+        <source>
+            <sender>Australian Government Bureau of Meteorology</sender>
+            <region>New South Wales</region>
+            <office>NSWRO</office>
+            <copyright>http://www.bom.gov.au/other/copyright.shtml</copyright>
+            <disclaimer>http://www.bom.gov.au/other/disclaimer.shtml</disclaimer>
+        </source>
+        <identifier>IDN11050</identifier>
+        <issue-time-utc>2024-10-27T05:25:00Z</issue-time-utc>
+        <issue-time-local tz="EDT">2024-10-27T16:25:00+11:00</issue-time-local>
+        <sent-time>2024-10-27T05:25:21Z</sent-time>
+        <expiry-time>2024-10-28T05:25:00Z</expiry-time>
+        <validity-bgn-time-local tz="EDT">2024-10-27T17:00:00+11:00</validity-bgn-time-local>
+        <validity-end-time-local tz="EDT">2024-11-03T23:59:59+11:00</validity-end-time-local>
+        <next-routine-issue-time-utc>2024-10-27T17:45:00Z</next-routine-issue-time-utc>
+        <next-routine-issue-time-local tz="EDT">2024-10-28T04:45:00+11:00</next-routine-issue-time-local>
+        <status>O</status>
+        <service>WSP</service>
+        <sub-service>FCT</sub-service>
+        <product-type>F</product-type>
+        <phase>NEW</phase>
+    </amoc>
+    <forecast>
+        <area aac="NSW_FA001" description="New South Wales" type="region"/>
+        <area aac="NSW_ME003" description="Wollongong" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Clear. Winds northeasterly 15 to 20 km/h becoming light in the evening.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers, most likely in the afternoon and evening. The chance of a thunderstorm. Light winds becoming south to southwesterly 15 to 25 km/h in the morning then tending south to southeasterly 25 to 35 km/h in the middle of the day.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:00am to 4:10pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds southerly 15 to 25 km/h tending southeasterly in the morning then becoming light in the late evening.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Cloud clearing. Light winds becoming northeasterly 20 to 30 km/h during the day then tending northerly 15 to 20 km/h during the evening.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Mostly sunny morning. Medium chance of showers, most likely in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Winds northerly 15 to 20 km/h becoming light during the morning then becoming southerly 15 to 25 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Cloudy. High chance of showers. Winds southerly 15 to 25 km/h turning southeasterly during the morning.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Cloudy. Medium chance of showers. Light winds becoming north to northeasterly 20 to 30 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds northerly 15 to 25 km/h turning northwesterly 15 to 20 km/h later in the day.</text>
+            </forecast-period>
+        </area>
+        <area aac="NSW_ME001" description="Sydney" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Clear. Winds northeasterly 15 to 20 km/h becoming light in the evening.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Sunny morning. Medium chance of showers in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming south to southwesterly 15 to 20 km/h in the morning then turning southeasterly 25 to 35 km/h in the middle of the day.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:00am to 4:10pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds south to southeasterly 15 to 20 km/h becoming light before dawn then becoming southeasterly 15 to 25 km/h in the early afternoon.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Cloud clearing. Light winds becoming northeasterly 15 to 25 km/h during the afternoon then becoming light during the evening.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Mostly sunny morning. Slight chance of a shower in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming south to southeasterly 15 to 20 km/h during the afternoon.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers. Winds southerly 15 to 25 km/h turning southeasterly 15 to 20 km/h during the morning.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Cloudy. Medium chance of showers. Winds northeast to southeasterly 15 to 20 km/h becoming northeasterly 20 to 30 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Light winds becoming north to northwesterly 15 to 20 km/h during the morning.</text>
+            </forecast-period>
+        </area>
+        <area aac="NSW_ME004" description="Central Coast" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Clear. Light winds.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Sunny morning. Slight chance of a shower in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming west to southwesterly 20 to 30 km/h in the middle of the day then turning southerly 25 to 35 km/h in the early afternoon.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:00am to 4:00pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds southerly 15 to 25 km/h becoming light early in the morning then becoming southeasterly 15 to 20 km/h in the early afternoon.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Partly cloudy. Light winds becoming easterly 15 to 20 km/h during the day then tending northeasterly during the afternoon.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Mostly sunny morning. Slight chance of a shower in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming southerly 15 to 20 km/h during the evening.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers. Winds southerly 15 to 20 km/h turning southeasterly during the day.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Cloudy. Medium chance of showers. Light winds becoming northeasterly 15 to 25 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds northeasterly 15 to 20 km/h tending northerly during the morning.</text>
+            </forecast-period>
+        </area>
+        <area aac="NSW_ME005" description="Newcastle" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Clear. Light winds.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Sunny morning. Slight chance of a shower in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming west to southwesterly 20 to 30 km/h in the middle of the day then turning southerly 25 to 35 km/h in the late afternoon.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:00am to 4:10pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Winds southerly 15 to 25 km/h becoming light early in the morning then becoming southeasterly 15 to 20 km/h in the early afternoon.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Partly cloudy. Light winds becoming easterly 15 to 20 km/h during the afternoon then tending northeasterly during the evening.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Mostly sunny morning. Slight chance of a shower in the afternoon and evening. The chance of a thunderstorm in the afternoon and evening. Light winds becoming southerly 15 to 20 km/h during the evening.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers. Winds southerly 15 to 25 km/h tending southeasterly during the day.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers. Winds southeasterly 15 to 20 km/h turning northeasterly 15 to 25 km/h later in the day.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Light winds becoming northwest to northeasterly 15 to 20 km/h during the morning.</text>
+            </forecast-period>
+        </area>
+        <area aac="NSW_ME006" description="Canberra" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Clear. Winds westerly 15 to 25 km/h becoming light in the evening.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Mostly sunny. Slight chance of a shower. Light winds becoming west to northwesterly 20 to 30 km/h in the middle of the day then shifting easterly 15 to 25 km/h in the late afternoon.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:10am to 4:20pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Partly cloudy. Light winds.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Cloud clearing. Light winds becoming northwesterly 15 to 25 km/h during the afternoon then becoming light during the evening.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Becoming cloudy. Slight chance of a shower. The chance of a thunderstorm in the afternoon and evening. Light winds becoming westerly 15 to 25 km/h during the day then becoming light during the evening.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Light winds becoming northeast to southeasterly 15 to 20 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Cloudy. Slight chance of a shower. Light winds becoming northerly 15 to 20 km/h during the day.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower. Light winds becoming northwesterly 15 to 25 km/h during the morning.</text>
+            </forecast-period>
+        </area>
+        <area aac="NSW_ME007" description="Alpine" type="metropolitan" parent-aac="NSW_FA001">
+            <forecast-period index="0" start-time-local="2024-10-27T17:00:00+11:00" end-time-local="2024-10-28T00:00:00+11:00" start-time-utc="2024-10-27T06:00:00Z" end-time-utc="2024-10-27T13:00:00Z">
+                <text type="forecast">Mostly clear. Winds westerly 25 to 40 km/h.</text>
+            </forecast-period>
+            <forecast-period index="1" start-time-local="2024-10-28T00:00:00+11:00" end-time-local="2024-10-29T00:00:00+11:00" start-time-utc="2024-10-27T13:00:00Z" end-time-utc="2024-10-28T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers, most likely in the afternoon. Winds west to northwesterly 35 to 50 km/h decreasing to 30 to 45 km/h early in the morning then turning south to southwesterly 15 to 25 km/h in the late morning and early afternoon.</text>
+                <text type="fire_danger">Moderate</text>
+                <text type="uv_alert">Sun protection 9:10am to 4:30pm, UV Index predicted to reach 8 [Very High]</text>
+            </forecast-period>
+            <forecast-period index="2" start-time-local="2024-10-29T00:00:00+11:00" end-time-local="2024-10-30T00:00:00+11:00" start-time-utc="2024-10-28T13:00:00Z" end-time-utc="2024-10-29T13:00:00Z">
+                <text type="forecast">Sunny. Winds west to southwesterly 15 to 25 km/h tending south to southwesterly 15 to 20 km/h during the morning.</text>
+            </forecast-period>
+            <forecast-period index="3" start-time-local="2024-10-30T00:00:00+11:00" end-time-local="2024-10-31T00:00:00+11:00" start-time-utc="2024-10-29T13:00:00Z" end-time-utc="2024-10-30T13:00:00Z">
+                <text type="forecast">Sunny. Winds westerly 15 to 25 km/h turning northwesterly 15 to 20 km/h during the evening.</text>
+            </forecast-period>
+            <forecast-period index="4" start-time-local="2024-10-31T00:00:00+11:00" end-time-local="2024-11-01T00:00:00+11:00" start-time-utc="2024-10-30T13:00:00Z" end-time-utc="2024-10-31T13:00:00Z">
+                <text type="forecast">Partly cloudy. Slight chance of a shower in the afternoon and evening. Winds northwesterly 20 to 30 km/h tending westerly during the morning then becoming light during the evening.</text>
+            </forecast-period>
+            <forecast-period index="5" start-time-local="2024-11-01T00:00:00+11:00" end-time-local="2024-11-02T00:00:00+11:00" start-time-utc="2024-10-31T13:00:00Z" end-time-utc="2024-11-01T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers, most likely later in the day. Winds southeast to southwesterly 15 to 20 km/h tending easterly later.</text>
+            </forecast-period>
+            <forecast-period index="6" start-time-local="2024-11-02T00:00:00+11:00" end-time-local="2024-11-03T00:00:00+11:00" start-time-utc="2024-11-01T13:00:00Z" end-time-utc="2024-11-02T13:00:00Z">
+                <text type="forecast">Mostly sunny. Winds northeasterly 15 to 20 km/h turning northwesterly 30 to 45 km/h during the morning.</text>
+            </forecast-period>
+            <forecast-period index="7" start-time-local="2024-11-03T00:00:00+11:00" end-time-local="2024-11-04T00:00:00+11:00" start-time-utc="2024-11-02T13:00:00Z" end-time-utc="2024-11-03T13:00:00Z">
+                <text type="forecast">Partly cloudy. Medium chance of showers. Winds northwesterly 40 to 60 km/h tending westerly 20 to 30 km/h later.</text>
+            </forecast-period>
+        </area>
+    </forecast>
+</product>
