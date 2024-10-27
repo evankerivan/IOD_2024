@@ -8,7 +8,7 @@ def load_data():
     return pd.read_csv('./capstone/week_data.csv', index_col=0)
 
 week_data = load_data()
-week_data[['TEMP_min', 'TEMP_max']].round(0)
+week_data[['TEMP_min', 'TEMP_max']] = week_data[['TEMP_min', 'TEMP_max']].round(0)
 # Streamlit UI
 st.title("Sydney Air Quality Forecast")
 st.subheader("Weather")
