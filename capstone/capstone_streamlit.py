@@ -27,7 +27,7 @@ import streamlit as st
 
 # In[2]:
 
-df = pd.read_csv('/Users/evankerivan/Desktop/IOD_2024/capstone/traffic_victoria_road.csv')
+df = pd.read_csv('/capstone/traffic_victoria_road.csv')
 
 import requests
 import json
