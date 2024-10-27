@@ -9,13 +9,17 @@ def load_data():
 
 week_data = load_data()
 week_data[['TEMP_min', 'TEMP_max']] = week_data[['TEMP_min', 'TEMP_max']].round(0)
+# Use the date index to fill the "Day" column with the day of the week
+
+week_data['Day'] = week_data.index.to_series().dt.day_name()
+
 # Streamlit UI
 st.title("Sydney Air Quality Forecast")
 st.subheader("Weather")
 
-# Display Weather Data
-weather_columns = week_data[['TEMP_min', 'TEMP_max', 'RAIN_sum', 'forecast']].copy()
-weather_columns.columns = ['Temp Min (C)', 'Temp Max (C)', 'Rain (mm)', 'Forecast']
+# Display Weather Data with Day column
+weather_columns = week_data[['Day', 'TEMP_min', 'TEMP_max', 'RAIN_sum', 'forecast']].copy()
+weather_columns.columns = ['Day', 'Temp Min (C)', 'Temp Max (C)', 'Rain (mm)', 'Forecast']
 st.write(weather_columns)
 
 # Display Air Quality Data
