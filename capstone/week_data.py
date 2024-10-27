@@ -1,16 +1,17 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-
 # Load the data
 @st.cache_data
 def load_data():
-    return pd.read_csv('./capstone/week_data.csv', index_col=0)
+    # Parse the index as dates to ensure it is a datetime index
+    data = pd.read_csv('./capstone/week_data.csv', index_col=0, parse_dates=True)
+    data.index = pd.to_datetime(data.index, errors='coerce')  # Ensure datetime index
+    return data
 
 week_data = load_data()
-week_data[['TEMP_min', 'TEMP_max']] = week_data[['TEMP_min', 'TEMP_max']].round(0)
-# Use the date index to fill the "Day" column with the day of the week
 
+# Round temperature columns to 0 decimal places
+week_data[['TEMP_min', 'TEMP_max']] = week_data[['TEMP_min', 'TEMP_max']].round(0)
+
+# Use the date index to fill the "Day" column with the day of the week
 week_data['Day'] = week_data.index.to_series().dt.day_name()
 
 # Streamlit UI
@@ -42,7 +43,5 @@ for pollutant in pollutants:
     ax.set_xlabel("Date")
     ax.set_ylabel("Concentration")
     ax.set_title(f"{pollutant.split('_')[0]} Levels")
-
     plt.xticks(rotation=45)
-
     st.pyplot(fig)
