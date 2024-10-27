@@ -38,4 +38,7 @@ for pollutant in pollutants:
     ax.set_xlabel("Date")
     ax.set_ylabel("Concentration")
     ax.set_title(f"{pollutant.split('_')[0]} Levels")
+
+    plt.xticks(rotation=45)
+
     st.pyplot(fig)
