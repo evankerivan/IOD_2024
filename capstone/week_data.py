@@ -43,4 +43,10 @@ pollutants = ['CO_mean', 'SO2_mean', 'OZONE_mean', 'PM10_mean', 'PM2.5_mean']
 for pollutant in pollutants:
     st.subheader(f"Daily {pollutant.split('_')[0]} Concentration")
     fig, ax = plt.subplots()
-    ax.plot(week_data
+    ax.plot(week_data.index, week_data[pollutant])
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Concentration")
+    ax.set_title(f"{pollutant.split('_')[0]} Levels")
+    plt.xticks(rotation=45)
+    st.pyplot(fig)
+
