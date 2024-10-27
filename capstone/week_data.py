@@ -25,7 +25,7 @@ st.subheader("Weather")
 # Display Weather Data with Day column
 weather_columns = week_data[['Day', 'TEMP_min', 'TEMP_max', 'RAIN_sum', 'forecast']].copy()
 weather_columns.columns = ['Day', 'Temp Min (C)', 'Temp Max (C)', 'Rain (mm)', 'Forecast']
-st.write(weather_columns)
+st.dataframe(weather_columns, width=1000)  # Adjust width as needed
 
 # Display Air Quality Data
 st.subheader("Air Quality")
