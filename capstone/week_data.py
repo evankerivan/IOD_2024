@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 @st.cache_data
 def load_data():
     data = pd.read_csv('./capstone/week_data.csv', index_col=0)
-    # Convert index to datetime format if it’s not already
-    data.index = pd.to_datetime(data.index, errors='coerce')
+    # Convert index to datetime format and normalize to remove time component
+    data.index = pd.to_datetime(data.index, errors='coerce').normalize()
     return data
 
 week_data = load_data()
