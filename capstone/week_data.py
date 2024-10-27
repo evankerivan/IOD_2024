@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Load the data
 @st.cache_data
 def load_data():
-    return pd.read_csv('/Users/evankerivan/Desktop/IOD_2024/capstone/week_data.csv', parse_dates=['datetime'], index_col='datetime')
+    return pd.read_csv('/capstone/week_data.csv', parse_dates=['datetime'], index_col='datetime')
 
 week_data = load_data()
 
