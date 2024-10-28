@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Load the data
-@st.cache_data
+@st.cache_data(ttl=3600)  # Refreshes every hour (3600 seconds)
 def load_data():
     data = pd.read_csv('./capstone/week_data.csv', index_col=0)
     # Convert index to datetime format and strip time component by formatting it as a string
