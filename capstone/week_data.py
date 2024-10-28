@@ -30,7 +30,7 @@ st.dataframe(weather_columns, width=1000)  # Adjust width as needed
 # Display Air Quality Data
 st.subheader("Air Quality")
 
-air_quality_columns = ['CO', 'OZONE', 'PM10', 'PM2.5', 'SO2', 'Overall']
+air_quality_columns = ['CO', 'OZONE', 'PM10', 'PM2.5', 'SO2', 'overall']
 
 def color_air_quality(val):
     color = {'Good': 'green', 'Fair': 'yellow', 'Poor': 'orange', 'Very Poor': 'red'}.get(val, '')
