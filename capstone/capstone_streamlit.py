@@ -2,43 +2,26 @@
 import requests
 import numpy as np
 import json
-import pandas as pd
-from datetime import datetime, timedelta
-import time
 from ftplib import FTP
 import xml.etree.ElementTree as ET
 import pandas as pd
 import re
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
 import tensorflow as tf
-tf.config.run_functions_eagerly(True)
-from datetime import datetime
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+from datetime import datetime, timedelta
 import concurrent.futures
 import time
-from sklearn.metrics import mean_absolute_error
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_absolute_error  # if you're using this elsewhere in the script
-from tensorflow.keras.models import load_model  # Import the load_model function to load the trained LSTM model
 import streamlit as st
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import load_model  # Import the load_model function to load the trained LSTM model
+from tensorflow.keras.layers import LSTM, Dense
+
+tf.config.run_functions_eagerly(True)
 
 
-# In[2]:
-
-df = pd.read_csv('capstone/traffic_victoria_road.csv')
-
-import requests
-import json
-import pandas as pd
-from datetime import datetime, timedelta
-import time
-import requests
-import json
-import pandas as pd
-from datetime import datetime, timedelta
-import time
 
 
 # Define the base URL for the POST request
@@ -141,19 +124,12 @@ combined_df = fetch_air_quality_data()
 combined_df.info()
 
 
-# In[4]:
-
-
 df=combined_df
-
-
-# In[5]:
 
 
 df.head()
 
 
-# In[6]:
 
 
 import pandas as pd
@@ -175,29 +151,7 @@ df_wide = df.pivot_table(index=['Site_Id', 'Date', 'Hour', 'HourDescription'],
 # Optional: Flatten the MultiIndex columns if necessary
 df_wide.columns = [col if not isinstance(col, tuple) else col[1] for col in df_wide.columns]
 
-# Step 3: Display the wide-format DataFrame
-
-
-# In[7]:
-
-
-df_wide.head()
-
-
-# In[8]:
-
-
-df_wide.info()
-
-
-# In[9]:
-
-
 df_wide.head()  # Check for NaNs at the top
-
-
-# In[10]:
-
 
 # Fill NaNs at the edges with forward and backward filling
 df_wide.fillna(method='ffill', inplace=True)
@@ -209,26 +163,9 @@ df_wide.interpolate(method='linear', axis=0, inplace=True)
 # Check the resulting DataFrame
 print(df_wide)
 
-
-# In[11]:
-
-
 df_wide.info()
 
-
-# In[12]:
-
-
 df_wide.head()
-
-
-# In[13]:
-
-
-
-
-# In[14]:
-
 
 df_wide['datetime'] = pd.to_datetime(df_wide['Date']) + pd.to_timedelta(df_wide['Hour'], unit='h')
 
@@ -237,10 +174,6 @@ df_wide.set_index('datetime', inplace=True)
 df_wide = df_wide.sort_index(ascending=True)
 
 df_wide.head()
-
-
-# In[15]:
-
 
 # Define the aggregation rules for each parameter
 aggregation_rules_mean = {
@@ -271,28 +204,7 @@ daily_aggregated_mean.columns = ['_'.join(col).strip() if isinstance(col, tuple)
 
 daily_aggregated_mean.interpolate(method='linear', inplace=True)
 
-# For columns that require rolling averages (if needed, change window size accordingly)
-# For example, for CO, we might want a 24-hour rolling average
-#daily_aggregated['CO_rolling_avg'] = df['CO'].resample('D').mean().rolling(window=24).mean()
-
-# Display the daily aggregated results
-#import ace_tools as tools; tools.display_dataframe_to_user(name="Daily Aggregated Data", dataframe=daily_aggregated)
-
-
-# In[16]:
-
-
-
-
-
-# In[17]:
-
-
 daily_aggregated_mean.info()
-
-
-# In[18]:
-
 
 aggregation_rules_max = {
     'CO': 'max',           # Daily max for CO
@@ -318,21 +230,11 @@ daily_aggregated_max = df_wide.resample('D').agg(aggregation_rules_max)
 daily_aggregated_max.columns = ['_'.join(col).strip() if isinstance(col, tuple) else col for col in daily_aggregated_max.columns]
 daily_aggregated_mean.interpolate(method='linear', inplace=True)
 
-
-# In[19]:
-
-
 daily_aggregated_max.head()
-
-
-# # Traffic
-
-# In[20]:
-
 
 # Load the data
 
-df = pd.read_csv('capstone/traffic_victoria_road.csv')
+df = pd.read_csv('traffic_victoria_road.csv')
 
 # Melt the DataFrame to convert the hour columns into rows
 df_melted = pd.melt(df, 
@@ -502,9 +404,6 @@ last_entry_date = combined_data['heavy_vehicle'].last_valid_index()
 combined_data.loc[:last_entry_date] = combined_data.loc[:last_entry_date].fillna(method='ffill')
 
 
-# In[21]:
-
-
 # Using 'outer' join to ensure we keep all dates across the three DataFrames
 combined_data = pd.concat([daily_aggregated_mean, daily_traffic_data], axis=1, join='outer')
 
@@ -518,10 +417,7 @@ last_entry_date = combined_data['heavy_vehicle'].last_valid_index()
 combined_data.loc[:last_entry_date] = combined_data.loc[:last_entry_date].fillna(method='ffill')
 
 
-# # Weather Forecast
-
-# In[22]:
-
+# Weather Forecast
 
 from ftplib import FTP
 import xml.etree.ElementTree as ET
@@ -781,33 +677,10 @@ combined_data.loc[:last_entry_date] = combined_data.loc[:last_entry_date].fillna
 
 # Display the final combined DataFrame to check the result
 
-
-# In[25]:
-
-
 combined_data.loc['2024-10-15']
 
 
-# In[26]:
-
-
-
-
 # # Traffic Model
-
-# In[27]:
-
-
-#import pandas as pd
-#import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
-import tensorflow as tf
-tf.config.run_functions_eagerly(True)
-import datetime
-import numpy as np
 
 #  Prepare the data
 # Select the features to include in the model (in addition to 'heavy_vehicle' and 'light_vehicle')
@@ -891,22 +764,19 @@ print(f"MAE (Light Vehicle): {mae_light_vehicle}")
 
 # # Traffic Prediction
 
-# In[28]:
-
-
 import numpy as np
 import pandas as pd
 
-# Step 1: Prepare to make rolling predictions from the first missing value until 8 days from today
+# Prepare to make rolling predictions from the first missing value until 8 days from today
 today = pd.Timestamp.today()
 days_to_predict = (today - first_missing_index).days + 8  # From first missing value to 8 days from today
 
-# Step 2: Prepare the last valid sequence for prediction
+# Prepare the last valid sequence for prediction
 # Assume the model was trained on a sequence of 7 days and all features were used in training
 last_sequence = combined_data_scaled.iloc[first_missing_loc-sequence_length:first_missing_loc].values
 pred_input = np.array([last_sequence])
 
-# Step 3: Predict for all missing days and 8 days into the future (Rolling Forecast)
+# Predict for all missing days and 8 days into the future (Rolling Forecast)
 predictions_future = []
 for _ in range(days_to_predict):
     # Predict one step ahead
@@ -916,7 +786,7 @@ for _ in range(days_to_predict):
     # Update pred_input by appending the prediction and removing the first timestep
     pred_input = np.append(pred_input[:, 1:, :], [[np.hstack([pred_input[0, -1, 2:], pred[0]])]], axis=1)
 
-# Step 4: Inverse transform the predictions ONLY for heavy_vehicle and light_vehicle
+# Inverse transform the predictions ONLY for heavy_vehicle and light_vehicle
 # Assuming the scaler was originally fitted only on 'heavy_vehicle' and 'light_vehicle' columns
 predictions_future = np.array(predictions_future)
 
@@ -925,24 +795,18 @@ scaler_vehicle = MinMaxScaler()
 scaler_vehicle.fit(combined_data[['heavy_vehicle', 'light_vehicle']])  # Fit the scaler only on relevant columns
 predictions_future_scaled = scaler_vehicle.inverse_transform(predictions_future[:, :2])  # Inverse-transform only the 2 columns
 
-# Step 5: Create a DataFrame of the predicted values
+# Create a DataFrame of the predicted values
 predicted_dates = pd.date_range(start=first_missing_index, periods=days_to_predict)
 predicted_values_df = pd.DataFrame(predictions_future_scaled, columns=['heavy_vehicle', 'light_vehicle'], index=predicted_dates)
 
-# Step 6: Update the original combined_data DataFrame with the predictions
+# Update the original combined_data DataFrame with the predictions
 combined_data.update(predicted_values_df)
 
 # Display the updated DataFrame
 print(combined_data.loc[first_missing_index:])
 
 
-# In[29]:
-
-
-
 # # Air Quality Model
-
-# In[30]:
 
 
 import pandas as pd
@@ -954,7 +818,7 @@ from tensorflow.keras.layers import LSTM, Dense
 import tensorflow as tf
 tf.config.run_functions_eagerly(True)
 
-# Step 1: Prepare the data
+# Prepare the data
 features = ['TEMP_min', 'TEMP_max', 'RAIN_sum', 'WDR_mean', 'WSP_max', 'heavy_vehicle', 'light_vehicle']
 target = ['CO_mean', 'NO2_mean', 'NO_mean', 'OZONE_mean', 'PM10_mean', 'PM2.5_mean', 'SO2_mean']
 
@@ -1026,9 +890,6 @@ np.save("scaler_target.npy", scaler_target)
 
 # # Rewrite Weather data
 
-# In[31]:
-
-
 # Ensure both DataFrames have their indices in datetime format
 combined_data.index = pd.to_datetime(combined_data.index)
 df_7forecast_sydney.index = pd.to_datetime(df_7forecast_sydney.index)
@@ -1050,23 +911,11 @@ last_entry_date = combined_data['heavy_vehicle'].last_valid_index()
 combined_data.loc[:last_entry_date] = combined_data.loc[:last_entry_date].fillna(method='ffill')
 
 
-
-# In[32]:
-
-
 combined_data.loc['2024-10-20']
-
-
-# In[ ]:
-
-
 
 
 
 # # Air Quality Prediction
-
-# In[33]:
-
 
 import numpy as np
 import pandas as pd
@@ -1097,46 +946,27 @@ def rolling_forecast(model, initial_sequence, n_days, scaler_features, scaler_ta
     rolling_predictions = np.array(rolling_predictions)
     return scaler_target.inverse_transform(rolling_predictions)  # Inverse transform the predictions
 
-# Step 1: Prepare for rolling predictions (using the last valid sequence)
+# Prepare for rolling predictions (using the last valid sequence)
 last_sequence = combined_data_scaled.iloc[first_missing_loc-sequence_length:first_missing_loc][features].values
 
 # Perform the rolling forecast for 8 days
 rolling_predictions = rolling_forecast(model, last_sequence, 8, scaler_features, scaler_target)
 
-# Step 2: Create a DataFrame with the rolling predictions
+# Create a DataFrame with the rolling predictions
 predicted_dates = pd.date_range(start=first_missing_index, periods=8)
 predicted_values_df = pd.DataFrame(rolling_predictions, columns=target, index=predicted_dates)
 
-# Step 3: Update the original combined_data DataFrame with the rolling predictions
+# Update the original combined_data DataFrame with the rolling predictions
 combined_data.update(predicted_values_df)
 
 # Display the updated DataFrame
 print(combined_data.loc[first_missing_index:])
 
 
-# In[41]:
-
-
-
-
-
-
-# In[35]:
-
-
-
-# In[36]:
-
-
 combined_data.loc['2024-10-21']
 
 
 # # Categorise results
-
-# In[37]:
-
-
-import pandas as pd
 
 # Function to categorize based on the pollutant dictionary
 def categorize_value(value, pollutant):
@@ -1204,8 +1034,6 @@ combined_data.loc[next_7_days.index, 'overall'] = next_7_days['overall']
 
 # # For streamlit
 
-# In[38]:
-
 
 today = pd.Timestamp.today().normalize()
 
@@ -1214,9 +1042,8 @@ next_7_days = today + pd.Timedelta(days=6)
 week_data = combined_data.loc[(combined_data.index >= today) & (combined_data.index <= next_7_days)]
 
 
-# In[39]:
-
-
 week_data.head(10)
+
+#Export CSV for streamlit
 
 week_data.to_csv('week_data.csv', index=True)  # Saves with date as the index
