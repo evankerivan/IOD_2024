@@ -25,13 +25,13 @@ jobs:
 
       - name: Run the script
         run: |
-          python /capstone/capstone_streamlit.py
+          python capstone_streamlit.py
 
       - name: Commit and push CSV output
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add /capstone/week_data.csv
+          git add week_data.csv
           git commit -m "Update CSV output"
           git push
         env:
