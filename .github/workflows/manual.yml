@@ -1,8 +1,6 @@
 name: Run Python Script and Export CSV
 
 on:
-  schedule:
-    - cron: '0 10 * * *'  # Runs every day at 4 PM UTC, which is 2 AM AEST
   workflow_dispatch:  # Allows for manual triggering if needed
 
 jobs:
