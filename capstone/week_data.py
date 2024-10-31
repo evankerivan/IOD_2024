@@ -1,3 +1,9 @@
+import sys
+import streamlit as st
+
+# Print the Python executable path in Streamlit
+st.write("Python executable:", sys.executable)
+
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
